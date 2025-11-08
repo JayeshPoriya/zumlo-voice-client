@@ -19,6 +19,10 @@ import {
   requestMicrophonePermission,
 } from "../../utils/GlobalFunctions";
 
+//Elevenlabs
+import { useConversation } from "@elevenlabs/react-native";
+import { ensureMicPermission } from "./ensureMicPermission";
+
 type CommonButtonProps = {
   title: string;
   icon: any; // or ImageSourcePropType
@@ -37,7 +41,7 @@ const CommonButton = ({ title, icon, onPress }: CommonButtonProps) => {
 };
 
 const Login: React.FC = ({ navigation }) => {
-  useEffect(() => {}, []);
+  const [connected, setConnected] = useState(false);
 
   useEffect(() => {
     console.log("useEffect AskMicPermission:");
@@ -59,6 +63,22 @@ const Login: React.FC = ({ navigation }) => {
         },
       ]);
     }
+  };
+
+  // Hook must be called here — top level, not inside conditions
+  const convo = useConversation({
+    onConnect: () => setConnected(true),
+    onDisconnect: () => setConnected(false),
+    onMessage: (m) => console.log("message: ", m),
+    onError: (e) => console.error("voice error", e),
+  });
+
+  const start = async () => {
+    await convo.startSession({ agentId: "agent_5101k9hm5jqgfhptbj2vdt1hwrs7" });
+  };
+
+  const stop = async () => {
+    await convo.endSession();
   };
 
   return (
@@ -113,6 +133,20 @@ const Login: React.FC = ({ navigation }) => {
               navigation?.navigate("MoodTracker");
             }}
           />
+
+          <View style={styles.startStopContainer}>
+            <Text style={styles.progress}>
+              {connected ? "Connected" : "Disconnected"}
+            </Text>
+            <TouchableOpacity
+              onPress={connected ? stop : start}
+              style={styles.startStopButton}
+            >
+              <Text style={styles.buttonTitle}>
+                {connected ? "Stop" : "Start"}
+              </Text>
+            </TouchableOpacity>
+          </View>
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>

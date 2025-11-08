@@ -57,18 +57,26 @@ import InitialRouter from "./src/navigation/InitialRouter";
 import colors from "./src/theme/Colors";
 import MyLoader from "./src/components/MyLoader";
 
+import { ElevenLabsProvider } from "@elevenlabs/react-native";
+
+//ElevenLabsProvider Details
+//API KEY: 8e8bafd2ef513d52a0e8120bf65571d072beec0b95bb4f9446af9fa8849aefc7
+//AGENT ID: agent_5101k9hm5jqgfhptbj2vdt1hwrs7
+
 function App() {
   return (
-    <Provider store={store}>
-      <SafeAreaProvider>
-        <NavigationContainer ref={navigationRef}>
-          <StatusBar animated backgroundColor={colors.themeColor} />
-          <InitialRouter />
-          <Toast />
-          <MyLoader />
-        </NavigationContainer>
-      </SafeAreaProvider>
-    </Provider>
+    <ElevenLabsProvider>
+      <Provider store={store}>
+        <SafeAreaProvider>
+          <NavigationContainer ref={navigationRef}>
+            <StatusBar animated backgroundColor={colors.themeColor} />
+            <InitialRouter />
+            <Toast />
+            <MyLoader />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </Provider>
+    </ElevenLabsProvider>
   );
 }
 

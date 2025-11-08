@@ -10,6 +10,8 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        // ✅ Add LiveKit repo
+        maven { url "https://maven.livekit.io" }
     }
     dependencies {
         classpath("com.android.tools.build:gradle")

@@ -47,6 +47,23 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     transform: [{ rotate: "180deg" }],
   },
+  startStopContainer: {
+    // flex: 1,
+    top: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 12,
+  },
+  startStopButton: {
+    padding: 12,
+    backgroundColor: colors.themeColor,
+    borderRadius: 8,
+  },
+  progress: {
+    fontFamily: fonts.myFontSemiBold,
+    fontSize: wp("4%"),
+    color: colors.black,
+  },
 });
 
 export default styles;

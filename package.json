@@ -10,6 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "@elevenlabs/react-native": "^0.5.2",
+    "@livekit/react-native": "^2.9.4",
+    "@livekit/react-native-webrtc": "^137.0.2",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native/new-app-screen": "0.82.1",
     "@react-navigation/native": "^7.1.19",
@@ -17,6 +20,7 @@
     "@reduxjs/toolkit": "^2.10.1",
     "add": "^2.0.6",
     "axios": "^1.13.2",
+    "livekit-client": "^2.15.14",
     "react": "19.1.1",
     "react-native": "0.82.1",
     "react-native-permissions": "^5.4.4",
