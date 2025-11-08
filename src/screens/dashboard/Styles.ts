@@ -22,30 +22,26 @@ const styles = StyleSheet.create({
     height: 120,
     alignSelf: "center",
     marginBottom: 40,
-    resizeMode: "contain",
+    tintColor: colors.themeColor,
   },
-  buttonContainer: {
-    backgroundColor: colors.themeColor,
-    borderRadius: 5,
-    margin: 10,
-  },
-  buttonSubContainer: {
-    justifyContent: "space-between",
-    flexDirection: "row",
-    padding: 10,
-  },
-  buttonTitle: {
+  heading: {
+    fontSize: 20,
     fontFamily: fonts.myFontBold,
-    fontSize: wp("4%"),
-    color: colors.white,
+    color: colors.black,
+    marginBottom: 12,
   },
-  buttonArrow: {
-    width: wp("5%"),
-    height: wp("5%"),
-    resizeMode: "contain",
-    tintColor: colors.white,
-    alignSelf: "center",
-    transform: [{ rotate: "180deg" }],
+  subHeading: {
+    fontSize: 16,
+    fontFamily: fonts.myFontSemiBold,
+    color: colors.black,
+    marginTop: 16,
+    marginBottom: 6,
+  },
+  text: {
+    fontSize: 14,
+    fontFamily: fonts.myFontRegular,
+    color: colors.grayDark,
+    lineHeight: 20,
   },
 });
 

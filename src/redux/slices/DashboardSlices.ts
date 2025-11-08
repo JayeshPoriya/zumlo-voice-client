@@ -1,7 +1,7 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
-const LoginSlices = createSlice({
-  name: "login",
+const DashboardSlices = createSlice({
+  name: "dashboard",
   initialState: {
     test: [],
   },
@@ -15,5 +15,5 @@ const LoginSlices = createSlice({
   },
 });
 
-export const { storeTest, clearTest } = LoginSlices.actions;
-export default LoginSlices.reducer;
+export const { storeTest, clearTest } = DashboardSlices.actions;
+export default DashboardSlices.reducer;

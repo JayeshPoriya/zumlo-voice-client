@@ -14,6 +14,7 @@ export const getProducts = (dispatch: any) => {
         if (res?.status == "400") {
           DisplayToast.showError(errorMessages.errorSomethingWrong);
         } else {
+          //Here need to dispatch to update or store value with redux state!
         }
       })
       .catch((err) => {

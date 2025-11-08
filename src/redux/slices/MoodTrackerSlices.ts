@@ -1,7 +1,7 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
-const LoginSlices = createSlice({
-  name: "login",
+const MoodTrackerSlices = createSlice({
+  name: "moodTracker",
   initialState: {
     test: [],
   },
@@ -15,5 +15,5 @@ const LoginSlices = createSlice({
   },
 });
 
-export const { storeTest, clearTest } = LoginSlices.actions;
-export default LoginSlices.reducer;
+export const { storeTest, clearTest } = MoodTrackerSlices.actions;
+export default MoodTrackerSlices.reducer;
