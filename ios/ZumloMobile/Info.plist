@@ -8,6 +8,10 @@
 		<string>Nunito-Regular.ttf</string>
 		<string>Nunito-Bold.ttf</string>
 	</array>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>We use the microphone for voice features.</string>
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>We convert your speech to text to help navigate the app.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
