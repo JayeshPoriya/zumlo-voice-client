@@ -64,6 +64,11 @@ const styles = StyleSheet.create({
     fontSize: wp("4%"),
     color: colors.black,
   },
+  waveCircle: {
+    position: "absolute",
+    borderRadius: 100,
+    backgroundColor: "#6A5ACD55", // light purple-blue glow
+  },
 });
 
 export default styles;
