@@ -1,3 +1,4 @@
+// #region Imports
 import React, { useEffect, useState, useRef } from "react";
 import {
   View,
@@ -10,17 +11,17 @@ import {
   Alert,
   Animated,
   Easing,
-  StyleSheet,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./Styles";
 import images from "../../theme/Images";
-import colors from "../../theme/Colors";
 import {
   openAppSettingsForMicrophonePermission,
   requestMicrophonePermission,
 } from "../../utils/GlobalFunctions";
 import { useConversation } from "@elevenlabs/react-native";
+import { ELEVENLABS } from "../../utils/Constants";
+// #endregion Imports
 
 const CommonButton = ({
   title,
@@ -86,7 +87,7 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
     }
   };
 
-  // 🔊 Start wave loop when connected (Stop button visible)
+  // Start wave loop when connected (Stop button visible)
   const startWave = () => {
     setListening(true);
     waveAnim.setValue(0);
@@ -139,7 +140,7 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
   });
 
   const start = async () => {
-    await convo.startSession({ agentId: "agent_1901k9w36cgbfzvteggnhjzg4amd" });
+    await convo.startSession({ agentId: ELEVENLABS.AGENTS.JP02 });
   };
 
   const stop = async () => {
@@ -151,6 +152,9 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
   const speak = async (text: string) => {
     try {
       await convo.sendUserMessage(text);
+      // await convo.sendContextualUpdate({
+      //   metadata: { assistant_override: text },
+      // });
     } catch (e) {
       console.error("Error sending message:", e);
     }
@@ -178,6 +182,12 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
     } else if (normalized.includes("mood")) {
       navigation.navigate("MoodTracker");
       speak("Let's check your mood today.");
+    } else if (
+      normalized.includes("task 2") ||
+      normalized.includes("task two")
+    ) {
+      navigation.navigate("EmotiveChat");
+      speak("Opening EmotiveChat.");
     } else {
       speak("Sorry, I didn’t understand that.");
     }
@@ -236,6 +246,12 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
               title="Mood Tracker"
               icon={images.back}
               onPress={() => navigation.navigate("MoodTracker")}
+            />
+
+            <CommonButton
+              title="Task 2"
+              icon={images.back}
+              onPress={() => navigation.navigate("EmotiveChat")}
             />
 
             {/* Start / Stop Section */}

@@ -1,10 +1,11 @@
+// #region Imports
 import React, { useEffect } from "react";
 import { Text, Image } from "react-native";
 import styles from "./Styles";
 import { useDispatch } from "react-redux";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "../../theme/Images";
-import colors from "../../theme/Colors";
+// #endregion Imports
 
 const Splash: React.FC = ({ navigation }) => {
   const dispatch = useDispatch();

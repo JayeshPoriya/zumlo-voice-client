@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: colors.themeColor,
     borderRadius: 5,
-    margin: 10,
+    margin: 5,
   },
   buttonSubContainer: {
     justifyContent: "space-between",

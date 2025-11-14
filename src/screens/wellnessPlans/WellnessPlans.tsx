@@ -1,20 +1,11 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-} from "react-native";
+// #region Imports
+import React from "react";
+import { Text, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import styles from "./Styles";
 import images from "../../theme/Images";
-import colors from "../../theme/Colors";
 import Header from "../../components/Header";
+// #endregion Imports
 
 const WellnessPlans: React.FC = ({ navigation }) => {
   return (
@@ -24,12 +15,9 @@ const WellnessPlans: React.FC = ({ navigation }) => {
         showBack={true}
         onBackPress={() => navigation?.goBack()}
       />
-
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <Image source={images.workInProgress} style={styles.logo} />
-
         <Text style={styles.heading}>Wellness Plans</Text>
-
         <Text style={styles.text}>
           Welcome to our application. hen you land on a sample web page or open
           an email template and see content beginning with "lorem ipsum," the

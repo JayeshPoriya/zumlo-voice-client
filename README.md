@@ -1,16 +1,19 @@
+# 🎙️ ZUMLO Voice Client
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+---
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🚀 Getting Started
 
-## Step 1: Start Metro
+> **Note:** Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### Step 1: Start Metro
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Metro is the JavaScript bundler for React Native.  
+To start the Metro dev server, run:
 
-```sh
+```bash
 # Using npm
 npm start
 
@@ -18,13 +21,15 @@ npm start
 yarn start
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Step 2: Build and Run Your App
 
-### Android
+With Metro running, open a new terminal and use one of the following commands to build and run your app:
 
-```sh
+#### 🟢 Android
+
+```bash
 # Using npm
 npm run android
 
@@ -32,25 +37,18 @@ npm run android
 yarn android
 ```
 
-### iOS
+#### 🍎 iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+For iOS, install CocoaPods dependencies (only needed initially or after dependency changes):
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
+```bash
 bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
 bundle exec pod install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Then run:
 
-```sh
+```bash
 # Using npm
 npm run ios
 
@@ -58,40 +56,121 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+If everything is configured correctly, your app should run in an emulator or connected device.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---
 
-## Step 3: Modify your app
+## 🧩 Project Structure
 
-Now that you have successfully run the app, let's make changes!
+Below is an overview of the folder and file structure for the **ZUMLO Voice Client** project.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+```
+ZUMLO-VOICE-CLIENT/
+│
+├── __tests__/                # Unit & integration test files
+│
+├── android/                  # Native Android project files (Gradle, Java, manifests)
+├── ios/                      # Native iOS project files (Xcode, Swift/Obj-C)
+│
+├── node_modules/             # Auto-generated npm dependencies
+│
+├── src/                      # All main source code lives here
+│   ├── assets/               # Static assets such as images and icons
+│   │   ├── back.png
+│   │   ├── profile.png
+│   │   ├── speak.png
+│   │   ├── splash.png
+│   │   └── workInProgress.png
+│   │
+│   ├── components/           # Reusable UI components
+│   │   ├── Header.tsx        # Common header component
+│   │   └── MyLoader.tsx      # Custom loader animation component
+│   │
+│   ├── config/               # Configuration and API-related files
+│   │   ├── ApiCall.ts        # Handles generic API call abstraction
+│   │   ├── ApiConfig.ts      # Base configuration for all APIs
+│   │   ├── BaseApiCall.ts    # Core API base functions
+│   │   ├── CallApi.ts        # Wrapper functions for making API requests
+│   │   └── EndPoint.ts       # Centralized API endpoint definitions
+│   │
+│   ├── navigation/           # Navigation setup (React Navigation)
+│   │   ├── InitialRouter.tsx # App entry router logic
+│   │   └── RootNavigation.ts # Root navigation container
+│   │
+│   ├── redux/                # Redux Toolkit store and slices
+│   │   ├── slices/           # Feature-based slices for state management
+│   │   └── Store.ts          # Redux store configuration
+│   │
+│   ├── screens/              # Main app screens and pages
+│   │                         # (Example: Home, Profile, Settings, etc.)
+│   │
+│   ├── theme/                # Global theme, colors, fonts, and styles
+│   │
+│   └── utils/                # Helper and utility functions
+│
+├── .gitignore                # Files/folders ignored by Git
+├── app.json                  # Application metadata and name configuration
+├── App.tsx                   # Root React Native component (entry point)
+├── babel.config.js           # Babel transpiler configuration
+├── Gemfile                   # Ruby gem dependencies for iOS (CocoaPods)
+├── index.js                  # Main entry file for React Native runtime
+├── jest.config.js            # Jest configuration for testing
+├── metro.config.js           # Metro bundler configuration
+├── package.json              # Project dependencies and scripts
+├── package-lock.json         # Lockfile for dependency versions
+├── react-native.config.js    # React Native CLI configuration
+└── README.md                 # Project documentation (this file)
+```
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+---
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🧠 Key Concepts
 
-## Congratulations! :tada:
+- **TypeScript:** Adds static typing and improves development experience.
+- **Redux Toolkit:** Simplified and powerful state management.
+- **React Navigation:** For smooth navigation between app screens.
+- **Custom Components:** Modular and reusable UI elements.
+- **API Layer:** Centralized and clean API integration structure.
+- **Theming:** Consistent color and style management.
 
-You've successfully run and modified your React Native App. :partying_face:
+---
 
-### Now what?
+## 🎉 Congratulations!
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+You've successfully run and understood the structure of your React Native app. 🎊
 
-# Troubleshooting
+### Next Steps
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+- Explore the `src/screens/` folder to add new screens or features.
+- Add new endpoints in `config/EndPoint.ts` and handle API calls via `ApiCall.ts`.
+- Customize your UI components under `src/components/`.
 
-# Learn More
+---
 
-To learn more about React Native, take a look at the following resources:
+## 🧰 Troubleshooting
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+If you encounter issues getting started, visit the official [Troubleshooting Guide](https://reactnative.dev/docs/troubleshooting).
+
+---
+
+## 📚 Learn More
+
+To learn more about React Native, check out these resources:
+
+- [React Native Website](https://reactnative.dev)
+- [Getting Started](https://reactnative.dev/docs/environment-setup)
+- [Learn the Basics](https://reactnative.dev/docs/getting-started)
+- [Blog](https://reactnative.dev/blog)
+- [`@facebook/react-native`](https://github.com/facebook/react-native)
+
+---
+
+## 💡 Author
+
+**Jayesh Poriya**  
+📍 Surat, India  
+📧 [jayeshporiya01@gmail.com](mailto:jayeshporiya01@gmail.com)
+
+---
+
+Made with ❤️ using **React Native** and **TypeScript**

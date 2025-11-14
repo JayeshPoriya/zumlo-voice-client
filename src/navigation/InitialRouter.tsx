@@ -7,6 +7,7 @@ import Journaling from "../screens/journaling/Journaling";
 import Goals from "../screens/goals/Goals";
 import WellnessPlans from "../screens/wellnessPlans/WellnessPlans";
 import MoodTracker from "../screens/moodTracker/MoodTracker";
+import EmotiveChat from "../screens/emotiveChat/EmotiveChat";
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +59,14 @@ const InitialRouter = () => {
       <Stack.Screen
         name="MoodTracker"
         component={MoodTracker}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      <Stack.Screen
+        name="EmotiveChat"
+        component={EmotiveChat}
         options={{
           headerShown: false,
         }}
