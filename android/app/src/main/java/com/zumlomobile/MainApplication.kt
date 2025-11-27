@@ -28,3 +28,5 @@ class MainApplication : Application(), ReactApplication {
       loadReactNative(this)
   }
 }
+
+

@@ -220,9 +220,8 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
           >
             {/* App Logo */}
             <Image source={images.appLogo} style={styles.logo} />
-
             {/* Navigation Buttons */}
-            <CommonButton
+            {/*  <CommonButton
               title="Dashboard"
               icon={images.back}
               onPress={() => navigation.navigate("Dashboard")}
@@ -232,7 +231,7 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
               icon={images.back}
               onPress={() => navigation.navigate("Journaling")}
             />
-            <CommonButton
+             <CommonButton
               title="Goals"
               icon={images.back}
               onPress={() => navigation.navigate("Goals")}
@@ -246,13 +245,40 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
               title="Mood Tracker"
               icon={images.back}
               onPress={() => navigation.navigate("MoodTracker")}
-            />
-
+            /> */}
             <CommonButton
-              title="Task 2"
+              title="Chat"
               icon={images.back}
               onPress={() => navigation.navigate("EmotiveChat")}
             />
+            <CommonButton
+              title="ElevenLabs Text-To-Speech"
+              icon={images.back}
+              onPress={() => navigation.navigate("ElevenLabs")}
+            />
+            <CommonButton
+              title="Hume Text-To-Speech"
+              icon={images.back}
+              onPress={() => navigation.navigate("Hume")}
+            />
+
+            <CommonButton
+              title="Hume Speech-To-Speech"
+              icon={images.back}
+              onPress={() => navigation.navigate("HumeSTS")}
+            />
+
+            <CommonButton
+              title="Cartesia Text-To-Speech"
+              icon={images.back}
+              onPress={() => navigation.navigate("Cartesia")}
+            />
+
+            {/* <CommonButton
+              title="Cartesia Chat"
+              icon={images.back}
+              onPress={() => navigation.navigate("CartesiaChat")}
+            /> */}
 
             {/* Start / Stop Section */}
             <View style={styles.startStopContainer}>

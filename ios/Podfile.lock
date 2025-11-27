@@ -2440,6 +2440,8 @@ PODS:
     - React-perflogger (= 0.82.1)
     - React-utils (= 0.82.1)
     - SocketRocket
+  - RNAudioRecord (0.2.2):
+    - React
   - RNCAsyncStorage (2.2.0):
     - boost
     - DoubleConversion
@@ -2468,6 +2470,8 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
+  - RNFS (2.20.0):
+    - React-Core
   - RNPermissions (5.4.4):
     - boost
     - DoubleConversion
@@ -2547,6 +2551,34 @@ PODS:
     - React-NativeModulesApple
     - React-RCTFabric
     - React-RCTImage
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
+  - RNSound (0.13.0):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
     - React-renderercss
     - React-rendererdebug
     - React-utils
@@ -2636,9 +2668,12 @@ DEPENDENCIES:
   - ReactAppDependencyProvider (from `build/generated/ios`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNAudioRecord (from `../node_modules/react-native-audio-record`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - RNFS (from `../node_modules/react-native-fs`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSound (from `../node_modules/react-native-sound`)
   - SocketRocket (~> 0.7.1)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -2799,12 +2834,18 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNAudioRecord:
+    :path: "../node_modules/react-native-audio-record"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSound:
+    :path: "../node_modules/react-native-sound"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -2884,9 +2925,12 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: cc2795efe30a023c3a505676b9c748b664b9c0a1
   ReactCodegen: 897bad2d2f722ff4dc46fc144f9cc018db0e2ce4
   ReactCommon: c5803af00bd3737dc1631749b1f1da5beba5b049
+  RNAudioRecord: 162fee3b8fb628773ec704bf0333823125be2ed7
   RNCAsyncStorage: 302f2fac014fd450046c120567ca364632da682b
+  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
   RNPermissions: 3c9fc6b54d44ce81b54c8212c4a1c2b994561274
   RNScreens: 3693ec4bbc0065151b843269e50e9807644e9918
+  RNSound: 280924a6b051cd4c21320bd15ec9bbbf27760ee5
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   WebRTC-SDK: 40d4f5ba05cadff14e4db5614aec402a633f007e
   Yoga: 689c8e04277f3ad631e60fe2a08e41d411daf8eb
